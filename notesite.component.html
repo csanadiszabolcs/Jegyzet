@@ -1,0 +1,28 @@
+<div class="notes-container">
+    <h1>Jegyzetelés</h1>
+  
+    <div class="add-note">
+      <textarea [(ngModel)]="newNote" placeholder="Kezdj egy új jegyzetet..."></textarea>
+      <button (click)="addNote()" class="buttonNote">Jegyzet hozzáadása</button>
+    </div>
+  
+    <div class="notes-list">
+      <table>
+        <thead>
+          @for (note of notes; track trackById($index, note)) {
+
+        }
+        </thead>
+        <tbody>
+            @for (note of notes; track trackById($index, note)) {
+                <tr>
+                  <td>{{ note.title }}</td>
+                    <td>{{ note.content }}</td>
+                    <td><span class="priority {{ note.priority.toLowerCase() }}">{{ note.priority }}</span></td>
+                    <td><a href="#" class="edit-link" (click)="deleteNote()">Törlés</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    </div>
+  </div>

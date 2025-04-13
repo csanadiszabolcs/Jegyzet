@@ -1,0 +1,19 @@
+<div class="profile-container">
+    <select #chosenProfile (change)="reload(chosenProfile.selectedIndex)">
+        @for (profile of profileObject; track $index) {
+            <option value="{{$index}}">{{profile.id}}</option>
+        }
+    </select>
+  
+    <!-- Profile Image -->
+    <div class="profile-header">
+      <div class="avatar">{{profileObject[selectedIndex].avatar}}</div>
+      <div class="user-info">
+          <div class="firstname">{{profileObject[selectedIndex].firstName}}</div>
+          <div class="lastname">{{profileObject[selectedIndex].lastName}}</div>
+          <div class="email">{{profileObject[selectedIndex].email}}</div>
+          <div class="phone">{{profileObject[selectedIndex].phoneNumber}}</div>
+      </div>
+    </div>
+  </div>
+  
