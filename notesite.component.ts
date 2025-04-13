@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, Output ,EventEmitter} from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
+import { ColorPipePipe } from '../../color-pipe.pipe';
 
 export interface Note {
   id: number,
